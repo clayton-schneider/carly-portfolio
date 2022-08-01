@@ -1,0 +1,14 @@
+{
+  "_cts": {
+    "project": {},
+    "homepage": {},
+    "skills": {}
+  },
+  "slices": {
+    "Portfolio": {
+      "default": {
+        "items": {}
+      }
+    }
+  }
+}
