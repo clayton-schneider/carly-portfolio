@@ -1,5 +1,6 @@
 // Types
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
+import { PrismicDocument } from "@prismicio/types";
 
 import { SliceZone } from "@prismicio/react";
 
@@ -8,7 +9,8 @@ import { components } from "../slices";
 
 import Head from "next/head";
 
-const Home: NextPage = ({ page }) => {
+const Home = ({ page }: { page: PrismicDocument }) => {
+  // console.log(page);
   return (
     <div>
       <Head>
@@ -27,9 +29,34 @@ const Home: NextPage = ({ page }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
+  // Because there is linked data
+  // For Reference: https://community.prismic.io/t/not-able-to-query-slice-machine-slices-with-graphquery/7030/23
+  const query = `{
+    homepage{
+      ...homepageFields
+      slices {
+       ...on portfolio{
+         variation{
+           ...on default{
+             primary{
+               title
+               description
+             }
+             items {
+               project{
+                 ...projectFields
+               }
+             }
+           }
+         }
+       }
+     }
+    }
+  }`;
+
   const client = createClient({ previewData });
 
-  const page = await client.getSingle("homepage");
+  const page = await client.getSingle("homepage", { graphQuery: query });
 
   return {
     props: {

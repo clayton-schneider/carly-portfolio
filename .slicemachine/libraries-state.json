@@ -22,9 +22,10 @@
                 "title": {
                   "type": "StructuredText",
                   "config": {
-                    "single": "heading1",
                     "label": "Title",
-                    "placeholder": "This is where it all begins..."
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
                   }
                 },
                 "description": {
@@ -61,40 +62,34 @@
               {
                 "project": {
                   "link_type": "Web",
-                  "url": "https://slicemachine.dev"
-                }
-              },
-              {
-                "project": {
-                  "link_type": "Web",
                   "url": "https://prismic.io"
                 }
               },
               {
                 "project": {
                   "link_type": "Web",
-                  "url": "https://prismic.io"
+                  "url": "http://google.com"
                 }
               },
               {
                 "project": {
                   "link_type": "Web",
-                  "url": "https://prismic.io"
+                  "url": "http://google.com"
                 }
               }
             ],
             "primary": {
               "title": [
                 {
-                  "type": "heading1",
-                  "text": "Extend scalable relationships",
+                  "type": "heading2",
+                  "text": "Monetize web-enabled methodologies",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Occaecat aute dolor culpa id culpa esse irure sint aliquip id Lorem velit. Ad aute cupidatat pariatur tempor voluptate pariatur sunt. Incididunt dolore aliqua cupidatat incididunt aliquip in magna elit.",
+                  "text": "Fugiat ullamco quis elit velit.",
                   "spans": []
                 }
               ]
@@ -103,13 +98,13 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default": {
             "path": "C:\\Simply Sprout\\carly\\.slicemachine\\assets\\slices\\Portfolio\\default\\preview.png",
             "width": 800,
-            "height": 96
+            "height": 24
           }
         }
       }

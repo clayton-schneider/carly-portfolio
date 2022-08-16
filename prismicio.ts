@@ -2,6 +2,9 @@ import * as prismic from "@prismicio/client";
 import * as prismicH from "@prismicio/helpers";
 import * as prismicNext from "@prismicio/next";
 import sm from "./sm.json";
+import { AllDocumentTypes } from "./types.generated";
+
+import { PrismicDocument } from "@prismicio/types";
 
 /**
  * The project's Prismic repository name.
@@ -14,7 +17,7 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
  * @type {prismicH.LinkResolverFunction}
  */
 // Update the Link Resolver to match your project's route structure
-export function linkResolver(doc) {
+export function linkResolver(doc: PrismicDocument) {
   switch (doc.type) {
     case "homepage":
       return "/";
@@ -31,8 +34,10 @@ export function linkResolver(doc) {
  *
  * @param config {prismicNext.CreateClientConfig} - Configuration for the Prismic client.
  */
-export const createClient = (config = {}) => {
-  const client = prismic.createClient(sm.apiEndpoint, config);
+export const createClient = (
+  config: prismic.ClientConfig & prismicNext.CreateClientConfig
+) => {
+  const client = prismic.createClient<AllDocumentTypes>(sm.apiEndpoint, config);
 
   prismicNext.enableAutoPreviews({
     client,

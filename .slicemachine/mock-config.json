@@ -7,7 +7,15 @@
   "slices": {
     "Portfolio": {
       "default": {
-        "items": {}
+        "items": {},
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }
