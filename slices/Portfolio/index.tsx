@@ -1,5 +1,8 @@
 import { FunctionComponent } from "react";
-// import { PortfolioSlice } from "../../types.generated";
+// Types
+import { PortfolioSlice } from "../../types.generated";
+
+import { SliceComponentProps } from "@prismicio/react";
 
 // Variations
 import { DefaultPortfolio } from "../../components/Portfolio/index";
@@ -15,21 +18,17 @@ interface ISliceProps {
   };
 }
 
-const Portfolio: FunctionComponent<ISliceProps> = ({
-  slice: { primary, items, variation },
-  index,
-}) => {
-  const componentMap: { [key: string]: FunctionComponent } = {
+const Portfolio: FunctionComponent<SliceComponentProps> = (props) => {
+  const componentMap: { [key: string]: FunctionComponent<PortfolioSlice> } = {
     default: DefaultPortfolio,
   };
 
-  const VariableComponent = componentMap[variation];
+  const VariableComponent = componentMap[props.slice.variation];
 
   return (
     <VariableComponent
+      {...props.slice}
       // id={`${index}-portfolio-slice`}
-      primary={primary}
-      items={items}
     />
   );
 };

@@ -9,7 +9,6 @@ export const DefaultPortfolio: FunctionComponent<PortfolioSliceDefault> = (
   // Get projects
   // Add typing from linked fetching on projects
   const projects = props.items as unknown as { project: ProjectDocument }[];
-  console.log(projects);
 
   return (
     // <section id={props.id}>
