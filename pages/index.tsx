@@ -2,15 +2,17 @@
 import { GetStaticProps } from "next";
 import { PrismicDocument } from "@prismicio/types";
 
-import { SliceZone } from "@prismicio/react";
+// Components
+import { Layout } from "../components/Layout";
 
+// Prismic Setup
+import { SliceZone } from "@prismicio/react";
 import { createClient } from "../prismicio";
 import { components } from "../slices";
 
 import Head from "next/head";
 
 const Home = ({ page }: { page: PrismicDocument }) => {
-  // console.log(page);
   return (
     <div>
       <Head>
@@ -20,7 +22,9 @@ const Home = ({ page }: { page: PrismicDocument }) => {
       </Head>
 
       <main>
-        <SliceZone slices={page.data.slices} components={components} />
+        <Layout>
+          <SliceZone slices={page.data.slices} components={components} />
+        </Layout>
       </main>
     </div>
   );

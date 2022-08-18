@@ -7,17 +7,6 @@ import { SliceComponentProps } from "@prismicio/react";
 // Variations
 import { DefaultPortfolio } from "../../components/Portfolio/index";
 
-// Log props to find shape
-interface ISliceProps {
-  context: {};
-  index: number;
-  slice: {
-    primary: {};
-    items: {}[];
-    variation: string;
-  };
-}
-
 const Portfolio: FunctionComponent<SliceComponentProps> = (props) => {
   const componentMap: { [key: string]: FunctionComponent<PortfolioSlice> } = {
     default: DefaultPortfolio,
