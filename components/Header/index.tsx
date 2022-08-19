@@ -9,10 +9,10 @@ export const Header = () => {
   ];
   return (
     <header className="flex justify-between items-center my-5">
-      <h1 className="font-bold text-3xl text-dark">Site Title</h1>
+      <h1 className="font-bold text-3xl text-dark">Carly Fisher</h1>
 
       {/* Navigation Links */}
-      <div className="flex space-x-2 hidden">
+      <div className="space-x-2 hidden">
         {navigation &&
           navigation.map((item, index) => (
             <NavLink key={`link-${index}`} {...item} />

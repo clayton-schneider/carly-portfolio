@@ -4,6 +4,7 @@ import { PrismicDocument } from "@prismicio/types";
 
 // Components
 import { Layout } from "../components/Layout";
+import { Hero } from "../components/Hero";
 
 // Prismic Setup
 import { SliceZone } from "@prismicio/react";
@@ -23,7 +24,10 @@ const Home = ({ page }: { page: PrismicDocument }) => {
 
       <main>
         <Layout>
-          <SliceZone slices={page.data.slices} components={components} />
+          <>
+            <Hero />
+            <SliceZone slices={page.data.slices} components={components} />
+          </>
         </Layout>
       </main>
     </div>
