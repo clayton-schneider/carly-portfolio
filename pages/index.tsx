@@ -6,6 +6,7 @@ import { PrismicDocument } from "@prismicio/types";
 import { Layout } from "../components/Layout";
 import { Hero } from "../components/Hero";
 import { Portfolio } from "../components/Portfolio/Past";
+import { Skills } from "../components/Skills";
 
 // Prismic Setup
 import { SliceZone } from "@prismicio/react";
@@ -23,11 +24,12 @@ const Home = ({ page }: { page: PrismicDocument }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="overflow-x-hidden">
         <Layout>
           <>
             <Hero />
             <Portfolio />
+            <Skills />
             <SliceZone slices={page.data.slices} components={components} />
           </>
         </Layout>
