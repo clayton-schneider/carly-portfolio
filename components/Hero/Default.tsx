@@ -22,8 +22,12 @@ export const DefaultHero: FunctionComponent<HeroSliceDefault> = ({
         <h6 className="text-5xl font-bold uppercase text-primary">
           {sectionTitle}
         </h6>
-        <h2 className="mt-2 text-3xl">{headline}</h2>
-        <p className="mt-2 text-lg">{subheadline}</p>
+        <h2 className="mt-2 text-3xl">
+          {headline ? headline : "Make sure to add a headline"}
+        </h2>
+        <p className="mt-2 text-lg">
+          {subheadline ? subheadline : "Make sure to add a subheadline!"}
+        </p>
         {primaryLink && (
           <a
             className="mt-2 inline-block rounded-3xl border border-primary py-1 px-8 font-bold text-primary"
@@ -39,8 +43,8 @@ export const DefaultHero: FunctionComponent<HeroSliceDefault> = ({
         <span className="absolute -right-72 -bottom-10 z-0 block h-[500px] w-[500px] rounded-full bg-primary"></span>
         {image && (
           <Image
+            priority
             className="relative rounded-3xl"
-            layout="fixed"
             objectFit="cover"
             width={600}
             height={700}

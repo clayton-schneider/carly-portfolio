@@ -15,29 +15,10 @@
           "link_type": "Web",
           "url": "http://google.com"
         }
-      },
-      {
-        "project": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
       }
     ],
     "primary": {
-      "title": [
-        {
-          "type": "heading2",
-          "text": "Monetize web-enabled methodologies",
-          "spans": []
-        }
-      ],
-      "description": [
-        {
-          "type": "paragraph",
-          "text": "Fugiat ullamco quis elit velit.",
-          "spans": []
-        }
-      ]
+      "sectionTitle": "target bricks-and-clicks models"
     }
   }
 ]

@@ -122,21 +122,11 @@
               "version": "sktwi1xtmkfgx8626",
               "description": "Portfolio",
               "primary": {
-                "title": {
-                  "type": "StructuredText",
+                "sectionTitle": {
+                  "type": "Text",
                   "config": {
-                    "label": "Title",
-                    "placeholder": "This is where it all begins...",
-                    "allowTargetBlank": true,
-                    "single": "heading2"
-                  }
-                },
-                "description": {
-                  "type": "StructuredText",
-                  "config": {
-                    "single": "paragraph",
-                    "label": "Description",
-                    "placeholder": "A nice description of your feature"
+                    "label": "Section Title",
+                    "placeholder": ""
                   }
                 }
               },
@@ -173,29 +163,10 @@
                   "link_type": "Web",
                   "url": "http://google.com"
                 }
-              },
-              {
-                "project": {
-                  "link_type": "Web",
-                  "url": "http://google.com"
-                }
               }
             ],
             "primary": {
-              "title": [
-                {
-                  "type": "heading2",
-                  "text": "Monetize web-enabled methodologies",
-                  "spans": []
-                }
-              ],
-              "description": [
-                {
-                  "type": "paragraph",
-                  "text": "Fugiat ullamco quis elit velit.",
-                  "spans": []
-                }
-              ]
+              "sectionTitle": "target bricks-and-clicks models"
             }
           }
         },
@@ -207,7 +178,7 @@
           "default": {
             "path": "C:\\Simply Sprout\\carly\\.slicemachine\\assets\\slices\\Portfolio\\default\\preview.png",
             "width": 800,
-            "height": 24
+            "height": 88
           }
         }
       }

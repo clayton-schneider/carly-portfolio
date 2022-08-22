@@ -11,14 +11,7 @@
     "Portfolio": {
       "default": {
         "items": {},
-        "primary": {
-          "title": {
-            "config": {
-              "patternType": "HEADING",
-              "blocks": 1
-            }
-          }
-        }
+        "primary": {}
       }
     },
     "Hero": {

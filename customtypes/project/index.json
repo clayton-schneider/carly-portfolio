@@ -5,6 +5,13 @@
   "status": true,
   "json": {
     "Main": {
+      "year": {
+        "type": "Text",
+        "config": {
+          "label": "Year",
+          "placeholder": ""
+        }
+      },
       "title": {
         "type": "Text",
         "config": {

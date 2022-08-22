@@ -153,6 +153,17 @@ interface ProjectDocumentData {
      *
      */
     link: prismicT.LinkField;
+    /**
+     * Year field in *Project*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.year
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    year: prismicT.KeyTextField;
 }
 /**
  * Project document from Prismic
@@ -295,25 +306,15 @@ export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
  */
 interface PortfolioSliceDefaultPrimary {
     /**
-     * Title field in *Portfolio → Primary*
+     * Section Title field in *Portfolio → Primary*
      *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: portfolio.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *Portfolio → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: portfolio.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: portfolio.primary.sectionTitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    description: prismicT.RichTextField;
+    sectionTitle: prismicT.KeyTextField;
 }
 /**
  * Item in Portfolio → Items

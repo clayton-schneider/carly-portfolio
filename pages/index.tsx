@@ -5,8 +5,7 @@ import { HeaderDocument } from "../types.generated";
 
 // Components
 import { Layout } from "../components/Layout";
-// import { DefaultHero } from "../components/Hero";
-import { Portfolio } from "../components/Portfolio/Past";
+// import { DefaultPortfolio } from "../components/Portfolio/Default";
 import { Skills } from "../components/Skills";
 import { Contact } from "../components/Contact";
 
@@ -39,7 +38,7 @@ const Home = ({
         <Layout header={header}>
           <>
             {/* <DefaultHero /> */}
-            <Portfolio />
+            {/* <DefaultPortfolio /> */}
             <Skills />
             <Contact />
             <SliceZone slices={page.data.slices} components={components} />
@@ -75,8 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
          variation{
            ...on default{
              primary{
-               title
-               description
+               sectionTitle
              }
              items {
                project{

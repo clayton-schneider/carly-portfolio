@@ -11,21 +11,11 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Portfolio",
       "primary": {
-        "title": {
-          "type": "StructuredText",
+        "sectionTitle": {
+          "type": "Text",
           "config": {
-            "label": "Title",
-            "placeholder": "This is where it all begins...",
-            "allowTargetBlank": true,
-            "single": "heading2"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "single": "paragraph",
-            "label": "Description",
-            "placeholder": "A nice description of your feature"
+            "label": "Section Title",
+            "placeholder": ""
           }
         }
       },
