@@ -5,7 +5,7 @@ import { HeaderDocument } from "../types.generated";
 
 // Components
 import { Layout } from "../components/Layout";
-import { Hero } from "../components/Hero";
+// import { DefaultHero } from "../components/Hero";
 import { Portfolio } from "../components/Portfolio/Past";
 import { Skills } from "../components/Skills";
 import { Contact } from "../components/Contact";
@@ -38,11 +38,11 @@ const Home = ({
       <main className="overflow-x-hidden">
         <Layout header={header}>
           <>
-            <Hero />
+            {/* <DefaultHero /> */}
             <Portfolio />
             <Skills />
             <Contact />
-            {/* <SliceZone slices={page.data.slices} components={components} /> */}
+            <SliceZone slices={page.data.slices} components={components} />
           </>
         </Layout>
       </main>
@@ -58,7 +58,19 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const query = `{
     homepage{
       ...homepageFields
-      slices {
+      slices{
+       ...on hero{
+         variation{
+           ...on default{
+             primary{
+               ...primaryFields
+             }
+             items{
+               ...itemsFields
+             }
+           }
+         }
+       }
        ...on portfolio{
          variation{
            ...on default{

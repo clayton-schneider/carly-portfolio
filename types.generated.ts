@@ -96,7 +96,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = PortfolioSlice;
+type HomepageDocumentDataSlicesSlice = PortfolioSlice | HeroSlice;
 /**
  * Homepage document from Prismic
  *
@@ -200,6 +200,95 @@ interface SkillsDocumentData {
  */
 export type SkillsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SkillsDocumentData>, "skills", Lang>;
 export type AllDocumentTypes = HeaderDocument | HomepageDocument | ProjectDocument | SkillsDocument;
+/**
+ * Primary content in Hero → Primary
+ *
+ */
+interface HeroSliceDefaultPrimary {
+    /**
+     * Section Title field in *Hero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.sectionTitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sectionTitle: prismicT.KeyTextField;
+    /**
+     * Headline field in *Hero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.headline
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    headline: prismicT.KeyTextField;
+    /**
+     * Subheadline field in *Hero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.subheadline
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    subheadline: prismicT.KeyTextField;
+    /**
+     * Primary Link field in *Hero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.primaryLink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    primaryLink: prismicT.KeyTextField;
+    /**
+     * Primary Link Label field in *Hero → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.primaryLinkLabel
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    primaryLinkLabel: prismicT.KeyTextField;
+    /**
+     * Image field in *Hero → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Hero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Hero*
+ *
+ */
+type HeroSliceVariation = HeroSliceDefault;
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: `Hero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
 /**
  * Primary content in Portfolio → Primary
  *

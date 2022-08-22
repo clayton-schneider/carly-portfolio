@@ -26,6 +26,9 @@
           "choices": {
             "portfolio": {
               "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
             }
           }
         }

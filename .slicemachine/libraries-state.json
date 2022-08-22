@@ -1,6 +1,109 @@
 {
   "slices": {
     "components": {
+      "hero": {
+        "library": "slices",
+        "id": "hero",
+        "name": "Hero",
+        "description": "Hero",
+        "model": {
+          "id": "hero",
+          "type": "SharedSlice",
+          "name": "Hero",
+          "description": "Hero",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Hero",
+              "primary": {
+                "sectionTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Section Title",
+                    "placeholder": ""
+                  }
+                },
+                "headline": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Headline",
+                    "placeholder": ""
+                  }
+                },
+                "subheadline": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Subheadline",
+                    "placeholder": ""
+                  }
+                },
+                "primaryLink": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Primary Link",
+                    "placeholder": ""
+                  }
+                },
+                "primaryLinkLabel": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Primary Link Label",
+                    "placeholder": ""
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "hero",
+            "items": [],
+            "primary": {
+              "sectionTitle": "monetize distributed architectures",
+              "headline": "transition web-enabled functionalities",
+              "subheadline": "generate frictionless ROI",
+              "primaryLink": "monetize dynamic supply-chains",
+              "primaryLinkLabel": "grow mission-critical methodologies",
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Simply Sprout\\carly\\.slicemachine\\assets\\slices\\Hero\\default\\preview.png",
+            "width": 800,
+            "height": 48
+          }
+        }
+      },
       "portfolio": {
         "library": "slices",
         "id": "portfolio",
