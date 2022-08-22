@@ -1,33 +1,44 @@
+// Import Types
+import { FunctionComponent } from "react";
+import { HeaderDocument } from "../../types.generated";
+
 import { MobileMenu } from "./MobileMenu";
 
-export const Header = () => {
-  const navigation = [
-    { link: "Work", linkLabel: "Work" },
-    { link: "Skills", linkLabel: "Skills" },
-    { link: "Contact", linkLabel: "Contact" },
-    { link: "Resume", linkLabel: "Resume" },
-  ];
+export const Header: FunctionComponent<HeaderDocument> = (props) => {
+  const { identity, navigation } = props.data;
+  console.log;
   return (
-    <header className="flex justify-between items-center my-5">
-      <h1 className="font-bold text-3xl text-dark">Carly Fisher</h1>
+    <header className="my-5 flex items-center justify-between">
+      <h1 className="text-3xl font-bold text-dark">{identity}</h1>
 
       {/* Navigation Links */}
-      <div className="space-x-2 hidden">
+      <div className="space-x-2">
         {navigation &&
           navigation.map((item, index) => (
             <NavLink key={`link-${index}`} {...item} />
           ))}
       </div>
 
-      <MobileMenu />
+      {/* <MobileMenu /> */}
     </header>
   );
 };
 
-const NavLink = ({ link, linkLabel }: { link: string; linkLabel: string }) => {
+const NavLink = ({
+  link,
+  linkText,
+}: {
+  link: string | null;
+  linkText: string | null;
+}) => {
   return (
-    <a className="text-dark text-lg" href={link}>
-      {linkLabel}
-    </a>
+    <>
+      {link && (
+        <a className="text-lg text-dark" href={link}>
+          {linkText}
+        </a>
+      )}
+      {!link && <p className="text-lg text-dark">{linkText}</p>}
+    </>
   );
 };

@@ -2,7 +2,10 @@
   "_cts": {
     "project": {},
     "homepage": {},
-    "skills": {}
+    "skills": {},
+    "header": {
+      "Navigation": {}
+    }
   },
   "slices": {
     "Portfolio": {

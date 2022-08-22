@@ -1,0 +1,1 @@
+export { getHeaderProps } from "./getHeaderProps";
