@@ -3,6 +3,7 @@ import * as prismicH from "@prismicio/helpers";
 import * as prismicNext from "@prismicio/next";
 import sm from "./sm.json";
 import { AllDocumentTypes } from "./types.generated";
+import { LinkResolverFunction } from "@prismicio/helpers";
 
 import { PrismicDocument } from "@prismicio/types";
 
@@ -17,16 +18,16 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
  * @type {prismicH.LinkResolverFunction}
  */
 // Update the Link Resolver to match your project's route structure
-export function linkResolver(doc: PrismicDocument) {
+export const linkResolver: LinkResolverFunction = (doc) => {
   switch (doc.type) {
     case "homepage":
       return "/";
     case "page":
       return `/${doc.uid}`;
     default:
-      return null;
+      return "/";
   }
-}
+};
 
 /**
  * Creates a Prismic client for the project's repository. The client is used to
