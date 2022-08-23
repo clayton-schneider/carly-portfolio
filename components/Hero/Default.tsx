@@ -18,7 +18,7 @@ export const DefaultHero: FunctionComponent<HeroSliceDefault> = ({
       id="hero"
       className="my-20 flex flex-col justify-between md:flex-row"
     >
-      <div className="relative z-50 mx-auto max-w-sm text-center md:mx-0 md:mt-10 md:max-w-lg md:text-left">
+      <div className="relative z-10 mx-auto max-w-sm text-center md:mx-0 md:mt-10 md:max-w-lg md:text-left">
         <h6 className="text-5xl font-bold uppercase text-primary">
           {sectionTitle}
         </h6>

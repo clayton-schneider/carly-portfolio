@@ -3,121 +3,121 @@
 import type * as prismicT from "@prismicio/types";
 import type * as prismic from "@prismicio/client";
 
-type Simplify<T> = {
-    [KeyType in keyof T]: T[KeyType];
+export type Simplify<T> = {
+  [KeyType in keyof T]: T[KeyType];
 };
 /** Content for Contact documents */
 interface ContactDocumentData {
-    /**
-     * Section Title field in *Contact*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.sectionTitle
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    sectionTitle: prismicT.KeyTextField;
-    /**
-     * Email field in *Contact*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.email
-     * - **Tab**: Email
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    email: prismicT.KeyTextField;
-    /**
-     * Email Text field in *Contact*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.emailText
-     * - **Tab**: Email
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    emailText: prismicT.KeyTextField;
-    /**
-     * Email Icon field in *Contact*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.emailIcon
-     * - **Tab**: Email
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    emailIcon: prismicT.ImageField<never>;
-    /**
-     * Resume Link field in *Contact*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.resumeLink
-     * - **Tab**: Resume
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    resumeLink: prismicT.KeyTextField;
-    /**
-     * Resume Text field in *Contact*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.resumeText
-     * - **Tab**: Resume
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    resumeText: prismicT.KeyTextField;
-    /**
-     * Resume Icon field in *Contact*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.resumeIcon
-     * - **Tab**: Resume
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    resumeIcon: prismicT.ImageField<never>;
-    /**
-     * Linkedin Link field in *Contact*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.linkedinLink
-     * - **Tab**: Linkedin
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    linkedinLink: prismicT.KeyTextField;
-    /**
-     * Linkedin Text field in *Contact*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.linkedinText
-     * - **Tab**: Linkedin
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    linkedinText: prismicT.KeyTextField;
-    /**
-     * Linkedin Icon field in *Contact*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: contact.linkedinIcon
-     * - **Tab**: Linkedin
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    linkedinIcon: prismicT.ImageField<never>;
+  /**
+   * Section Title field in *Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.sectionTitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  sectionTitle: prismicT.KeyTextField;
+  /**
+   * Email field in *Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.email
+   * - **Tab**: Email
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  email: prismicT.KeyTextField;
+  /**
+   * Email Text field in *Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.emailText
+   * - **Tab**: Email
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  emailText: prismicT.KeyTextField;
+  /**
+   * Email Icon field in *Contact*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.emailIcon
+   * - **Tab**: Email
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  emailIcon: prismicT.ImageField<never>;
+  /**
+   * Resume Link field in *Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.resumeLink
+   * - **Tab**: Resume
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  resumeLink: prismicT.KeyTextField;
+  /**
+   * Resume Text field in *Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.resumeText
+   * - **Tab**: Resume
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  resumeText: prismicT.KeyTextField;
+  /**
+   * Resume Icon field in *Contact*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.resumeIcon
+   * - **Tab**: Resume
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  resumeIcon: prismicT.ImageField<never>;
+  /**
+   * Linkedin Link field in *Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.linkedinLink
+   * - **Tab**: Linkedin
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  linkedinLink: prismicT.KeyTextField;
+  /**
+   * Linkedin Text field in *Contact*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.linkedinText
+   * - **Tab**: Linkedin
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  linkedinText: prismicT.KeyTextField;
+  /**
+   * Linkedin Icon field in *Contact*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.linkedinIcon
+   * - **Tab**: Linkedin
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  linkedinIcon: prismicT.ImageField<never>;
 }
 /**
  * Contact document from Prismic
@@ -128,57 +128,62 @@ interface ContactDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ContactDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContactDocumentData>, "contact", Lang>;
+export type ContactDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<
+    Simplify<ContactDocumentData>,
+    "contact",
+    Lang
+  >;
 /** Content for Header documents */
 interface HeaderDocumentData {
-    /**
-     * Identity field in *Header*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: header.identity
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    identity: prismicT.KeyTextField;
-    /**
-     * Navigation field in *Header*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: header.navigation[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    navigation: prismicT.GroupField<Simplify<HeaderDocumentDataNavigationItem>>;
+  /**
+   * Identity field in *Header*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.identity
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  identity: prismicT.KeyTextField;
+  /**
+   * Navigation field in *Header*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.navigation[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  navigation: prismicT.GroupField<Simplify<HeaderDocumentDataNavigationItem>>;
 }
 /**
  * Item in Header → Navigation
  *
  */
 export interface HeaderDocumentDataNavigationItem {
-    /**
-     * Link Text field in *Header → Navigation*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: header.navigation[].linkText
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    linkText: prismicT.KeyTextField;
-    /**
-     * Link field in *Header → Navigation*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: header.navigation[].link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    link: prismicT.KeyTextField;
+  /**
+   * Link Text field in *Header → Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.navigation[].linkText
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  linkText: prismicT.KeyTextField;
+  /**
+   * Link field in *Header → Navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.navigation[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  link: prismicT.KeyTextField;
 }
 /**
  * Header document from Prismic
@@ -189,31 +194,36 @@ export interface HeaderDocumentDataNavigationItem {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type HeaderDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HeaderDocumentData>, "header", Lang>;
+export type HeaderDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<
+    Simplify<HeaderDocumentData>,
+    "header",
+    Lang
+  >;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
-    /**
-     * Title field in *Homepage*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.Title
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    Title: prismicT.KeyTextField;
-    /**
-     * Slice Zone field in *Homepage*
-     *
-     * - **Field Type**: Slice Zone
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.slices[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-     *
-     */
-    slices: prismicT.SliceZone<HomepageDocumentDataSlicesSlice>;
+  /**
+   * Title field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.Title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  Title: prismicT.KeyTextField;
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<HomepageDocumentDataSlicesSlice>;
 }
 /**
  * Slice for *Homepage → Slice Zone*
@@ -229,64 +239,69 @@ type HomepageDocumentDataSlicesSlice = PortfolioSlice | HeroSlice | SkillsSlice;
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+export type HomepageDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithUID<
+    Simplify<HomepageDocumentData>,
+    "homepage",
+    Lang
+  >;
 /** Content for Project documents */
 interface ProjectDocumentData {
-    /**
-     * Year field in *Project*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: project.year
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    year: prismicT.KeyTextField;
-    /**
-     * Title field in *Project*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: project.title
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    title: prismicT.KeyTextField;
-    /**
-     * Description field in *Project*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: project.description
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    description: prismicT.KeyTextField;
-    /**
-     * Logo field in *Project*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: project.logo
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    logo: prismicT.ImageField<never>;
-    /**
-     * Link field in *Project*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: *None*
-     * - **API ID Path**: project.link
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    link: prismicT.LinkField;
+  /**
+   * Year field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.year
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  year: prismicT.KeyTextField;
+  /**
+   * Title field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * Description field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  description: prismicT.KeyTextField;
+  /**
+   * Logo field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  logo: prismicT.ImageField<never>;
+  /**
+   * Link field in *Project*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismicT.LinkField;
 }
 /**
  * Project document from Prismic
@@ -297,31 +312,36 @@ interface ProjectDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ProjectDocumentData>, "project", Lang>;
+export type ProjectDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<
+    Simplify<ProjectDocumentData>,
+    "project",
+    Lang
+  >;
 /** Content for Skill documents */
 interface SkillDocumentData {
-    /**
-     * Skill Name field in *Skill*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: skill.skillName
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    skillName: prismicT.KeyTextField;
-    /**
-     * Image field in *Skill*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: skill.image
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
+  /**
+   * Skill Name field in *Skill*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skill.skillName
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  skillName: prismicT.KeyTextField;
+  /**
+   * Image field in *Skill*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skill.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
 }
 /**
  * Skill document from Prismic
@@ -332,31 +352,32 @@ interface SkillDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SkillDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SkillDocumentData>, "skill", Lang>;
+export type SkillDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithUID<Simplify<SkillDocumentData>, "skill", Lang>;
 /** Content for Skills documents */
 interface SkillsDocumentData {
-    /**
-     * Skill field in *Skills*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: skills.skill
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    skill: prismicT.KeyTextField;
-    /**
-     * Image field in *Skills*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: skills.image
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
+  /**
+   * Skill field in *Skills*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.skill
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  skill: prismicT.KeyTextField;
+  /**
+   * Image field in *Skills*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
 }
 /**
  * Skills document from Prismic
@@ -367,73 +388,80 @@ interface SkillsDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SkillsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SkillsDocumentData>, "skills", Lang>;
-export type AllDocumentTypes = ContactDocument | HeaderDocument | HomepageDocument | ProjectDocument | SkillDocument | SkillsDocument;
+export type SkillsDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithUID<Simplify<SkillsDocumentData>, "skills", Lang>;
+export type AllDocumentTypes =
+  | ContactDocument
+  | HeaderDocument
+  | HomepageDocument
+  | ProjectDocument
+  | SkillDocument
+  | SkillsDocument;
 /**
  * Primary content in Hero → Primary
  *
  */
 interface HeroSliceDefaultPrimary {
-    /**
-     * Section Title field in *Hero → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.sectionTitle
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    sectionTitle: prismicT.KeyTextField;
-    /**
-     * Headline field in *Hero → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.headline
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    headline: prismicT.KeyTextField;
-    /**
-     * Subheadline field in *Hero → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.subheadline
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    subheadline: prismicT.KeyTextField;
-    /**
-     * Primary Link field in *Hero → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.primaryLink
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    primaryLink: prismicT.KeyTextField;
-    /**
-     * Primary Link Label field in *Hero → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.primaryLinkLabel
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    primaryLinkLabel: prismicT.KeyTextField;
-    /**
-     * Image field in *Hero → Primary*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: hero.primary.image
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    image: prismicT.ImageField<never>;
+  /**
+   * Section Title field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.sectionTitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  sectionTitle: prismicT.KeyTextField;
+  /**
+   * Headline field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.headline
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  headline: prismicT.KeyTextField;
+  /**
+   * Subheadline field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.subheadline
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  subheadline: prismicT.KeyTextField;
+  /**
+   * Primary Link field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.primaryLink
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  primaryLink: prismicT.KeyTextField;
+  /**
+   * Primary Link Label field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.primaryLinkLabel
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  primaryLinkLabel: prismicT.KeyTextField;
+  /**
+   * Image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
 }
 /**
  * Default variation for Hero Slice
@@ -443,7 +471,11 @@ interface HeroSliceDefaultPrimary {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type HeroSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeroSliceDefaultPrimary>, never>;
+export type HeroSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
 /**
  * Slice variation for *Hero*
  *
@@ -463,32 +495,32 @@ export type HeroSlice = prismicT.SharedSlice<"hero", HeroSliceVariation>;
  *
  */
 interface PortfolioSliceDefaultPrimary {
-    /**
-     * Section Title field in *Portfolio → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: portfolio.primary.sectionTitle
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    sectionTitle: prismicT.KeyTextField;
+  /**
+   * Section Title field in *Portfolio → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.primary.sectionTitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  sectionTitle: prismicT.KeyTextField;
 }
 /**
  * Item in Portfolio → Items
  *
  */
 export interface PortfolioSliceDefaultItem {
-    /**
-     * Project field in *Portfolio → Items*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: portfolio.items[].project
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    project: prismicT.RelationField<"project">;
+  /**
+   * Project field in *Portfolio → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].project
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  project: prismicT.RelationField<"project">;
 }
 /**
  * Default variation for Portfolio Slice
@@ -498,7 +530,11 @@ export interface PortfolioSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type PortfolioSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<PortfolioSliceDefaultPrimary>, Simplify<PortfolioSliceDefaultItem>>;
+export type PortfolioSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<PortfolioSliceDefaultPrimary>,
+  Simplify<PortfolioSliceDefaultItem>
+>;
 /**
  * Slice variation for *Portfolio*
  *
@@ -512,38 +548,41 @@ type PortfolioSliceVariation = PortfolioSliceDefault;
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type PortfolioSlice = prismicT.SharedSlice<"portfolio", PortfolioSliceVariation>;
+export type PortfolioSlice = prismicT.SharedSlice<
+  "portfolio",
+  PortfolioSliceVariation
+>;
 /**
  * Primary content in Skills → Primary
  *
  */
 interface SkillsSliceDefaultPrimary {
-    /**
-     * Section Title field in *Skills → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: skills.primary.sectionTitle
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    sectionTitle: prismicT.KeyTextField;
+  /**
+   * Section Title field in *Skills → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.primary.sectionTitle
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  sectionTitle: prismicT.KeyTextField;
 }
 /**
  * Item in Skills → Items
  *
  */
 export interface SkillsSliceDefaultItem {
-    /**
-     * Skill field in *Skills → Items*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: skills.items[].skill
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    skill: prismicT.RelationField<"skill">;
+  /**
+   * Skill field in *Skills → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: skills.items[].skill
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  skill: prismicT.RelationField<"skill">;
 }
 /**
  * Default variation for Skills Slice
@@ -553,7 +592,11 @@ export interface SkillsSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type SkillsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SkillsSliceDefaultPrimary>, Simplify<SkillsSliceDefaultItem>>;
+export type SkillsSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<SkillsSliceDefaultPrimary>,
+  Simplify<SkillsSliceDefaultItem>
+>;
 /**
  * Slice variation for *Skills*
  *
@@ -569,7 +612,10 @@ type SkillsSliceVariation = SkillsSliceDefault;
  */
 export type SkillsSlice = prismicT.SharedSlice<"skills", SkillsSliceVariation>;
 declare module "@prismicio/client" {
-    interface CreateClient {
-        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
-    }
+  interface CreateClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options?: prismic.ClientConfig
+    ): prismic.Client<AllDocumentTypes>;
+  }
 }

@@ -1,6 +1,7 @@
 // Import Types
 import { FunctionComponent } from "react";
 import { HeaderDocument } from "../../types.generated";
+import { NavLink } from "./NavLink";
 
 import { MobileMenu } from "./MobileMenu";
 
@@ -12,33 +13,18 @@ export const Header: FunctionComponent<HeaderDocument> = (props) => {
       <h1 className="text-3xl font-bold text-dark">{identity}</h1>
 
       {/* Navigation Links */}
-      <div className="space-x-2">
+      <div className="relative z-30 hidden space-x-2 md:block">
         {navigation &&
           navigation.map((item, index) => (
-            <NavLink key={`link-${index}`} {...item} />
+            <NavLink
+              key={`link-${index}`}
+              className="text-xl text-dark"
+              {...item}
+            />
           ))}
       </div>
 
-      {/* <MobileMenu /> */}
+      <MobileMenu className="md:hidden" navigation={navigation} />
     </header>
-  );
-};
-
-const NavLink = ({
-  link,
-  linkText,
-}: {
-  link: string | null;
-  linkText: string | null;
-}) => {
-  return (
-    <>
-      {link && (
-        <a className="text-lg text-dark" href={link}>
-          {linkText}
-        </a>
-      )}
-      {!link && <p className="text-lg text-dark">{linkText}</p>}
-    </>
   );
 };
