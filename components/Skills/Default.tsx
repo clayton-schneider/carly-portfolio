@@ -12,7 +12,7 @@ export const DefaultSkills: FunctionComponent<SkillsSliceDefault> = ({
   const skills = items as unknown as { skill: SkillDocument }[];
 
   return (
-    <section className="my-20">
+    <section id="skills" className="my-20">
       <h2 className="text-5xl font-bold uppercase text-primary">
         {sectionTitle}
       </h2>

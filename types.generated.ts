@@ -6,6 +6,129 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Contact documents */
+interface ContactDocumentData {
+    /**
+     * Section Title field in *Contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.sectionTitle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sectionTitle: prismicT.KeyTextField;
+    /**
+     * Email field in *Contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.email
+     * - **Tab**: Email
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    email: prismicT.KeyTextField;
+    /**
+     * Email Text field in *Contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.emailText
+     * - **Tab**: Email
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    emailText: prismicT.KeyTextField;
+    /**
+     * Email Icon field in *Contact*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.emailIcon
+     * - **Tab**: Email
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    emailIcon: prismicT.ImageField<never>;
+    /**
+     * Resume Link field in *Contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.resumeLink
+     * - **Tab**: Resume
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    resumeLink: prismicT.KeyTextField;
+    /**
+     * Resume Text field in *Contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.resumeText
+     * - **Tab**: Resume
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    resumeText: prismicT.KeyTextField;
+    /**
+     * Resume Icon field in *Contact*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.resumeIcon
+     * - **Tab**: Resume
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    resumeIcon: prismicT.ImageField<never>;
+    /**
+     * Linkedin Link field in *Contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.linkedinLink
+     * - **Tab**: Linkedin
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    linkedinLink: prismicT.KeyTextField;
+    /**
+     * Linkedin Text field in *Contact*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.linkedinText
+     * - **Tab**: Linkedin
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    linkedinText: prismicT.KeyTextField;
+    /**
+     * Linkedin Icon field in *Contact*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.linkedinIcon
+     * - **Tab**: Linkedin
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    linkedinIcon: prismicT.ImageField<never>;
+}
+/**
+ * Contact document from Prismic
+ *
+ * - **API ID**: `contact`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContactDocumentData>, "contact", Lang>;
 /** Content for Header documents */
 interface HeaderDocumentData {
     /**
@@ -245,7 +368,7 @@ interface SkillsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SkillsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SkillsDocumentData>, "skills", Lang>;
-export type AllDocumentTypes = HeaderDocument | HomepageDocument | ProjectDocument | SkillDocument | SkillsDocument;
+export type AllDocumentTypes = ContactDocument | HeaderDocument | HomepageDocument | ProjectDocument | SkillDocument | SkillsDocument;
 /**
  * Primary content in Hero → Primary
  *

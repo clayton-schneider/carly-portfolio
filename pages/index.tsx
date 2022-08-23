@@ -1,7 +1,7 @@
 // Types
 import { GetStaticProps } from "next";
 import { PrismicDocument } from "@prismicio/types";
-import { HeaderDocument } from "../types.generated";
+import { ContactDocument, HeaderDocument } from "../types.generated";
 
 // Components
 import { Layout } from "../components/Layout";
@@ -9,6 +9,7 @@ import { Contact } from "../components/Contact";
 
 // Data Fetching from Prismic
 import { getHeaderProps } from "../utils/fetchData";
+import { getContactProps } from "../utils/fetchData/getContactProps";
 
 // Prismic Setup
 import { SliceZone } from "@prismicio/react";
@@ -20,9 +21,11 @@ import Head from "next/head";
 const Home = ({
   page,
   header,
+  contact,
 }: {
   page: PrismicDocument;
   header: HeaderDocument;
+  contact: ContactDocument;
 }) => {
   return (
     <div>
@@ -35,8 +38,8 @@ const Home = ({
       <main className="overflow-x-hidden">
         <Layout header={header}>
           <>
-            <Contact />
             <SliceZone slices={page.data.slices} components={components} />
+            <Contact {...contact} />
           </>
         </Layout>
       </main>
@@ -101,11 +104,13 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
 
   const page = await client.getSingle("homepage", { graphQuery: query });
   const header = await getHeaderProps({ client });
+  const contact = await getContactProps({ client });
 
   return {
     props: {
       page,
       header,
+      contact,
     },
   };
 };
