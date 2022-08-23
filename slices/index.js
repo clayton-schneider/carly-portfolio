@@ -2,13 +2,16 @@
 
 import Hero from './Hero';
 import Portfolio from './Portfolio';
+import Skills from './Skills';
 
 export {
 	Hero,
 	Portfolio,
+	Skills,
 };
 
 export const components = {
 	hero: Hero,
 	portfolio: Portfolio,
+	skills: Skills,
 };

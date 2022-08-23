@@ -10,7 +10,6 @@ export const DefaultPortfolio: FunctionComponent<PortfolioSliceDefault> = (
   // Add typing from linked fetching on projects
   const projects = props.items as unknown as { project: ProjectDocument }[];
 
-  const works = [1, 2];
   return (
     <section id="work" className="my-20">
       <h2 className="text-5xl font-bold uppercase text-primary">

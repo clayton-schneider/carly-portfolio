@@ -5,8 +5,6 @@ import { HeaderDocument } from "../types.generated";
 
 // Components
 import { Layout } from "../components/Layout";
-// import { DefaultPortfolio } from "../components/Portfolio/Default";
-import { Skills } from "../components/Skills";
 import { Contact } from "../components/Contact";
 
 // Data Fetching from Prismic
@@ -37,9 +35,6 @@ const Home = ({
       <main className="overflow-x-hidden">
         <Layout header={header}>
           <>
-            {/* <DefaultHero /> */}
-            {/* <DefaultPortfolio /> */}
-            <Skills />
             <Contact />
             <SliceZone slices={page.data.slices} components={components} />
           </>
@@ -66,6 +61,20 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
              }
              items{
                ...itemsFields
+             }
+           }
+         }
+       }
+       ...on skills{
+         variation{
+           ...on default{
+             primary{
+               sectionTitle
+             }
+             items{
+               skill{
+                 ...skillFields
+               }
              }
            }
          }

@@ -1,6 +1,6 @@
 {
-  "id": "skills",
-  "label": "Skills",
+  "id": "skill",
+  "label": "Skill",
   "repeatable": true,
   "status": true,
   "json": {
@@ -12,10 +12,10 @@
           "placeholder": ""
         }
       },
-      "skill": {
+      "skillName": {
         "type": "Text",
         "config": {
-          "label": "Skill",
+          "label": "Skill Name",
           "placeholder": ""
         }
       },

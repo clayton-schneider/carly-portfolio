@@ -1,0 +1,17 @@
+{
+  "id": "02eb99c0-62a4-4890-9014-07127d7b10ef",
+  "uid": "est-laudantium-earum",
+  "type": "skill",
+  "data": {
+    "skillName": "engineer clicks-and-mortar e-markets",
+    "image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=900&h=500&fit=crop"
+    }
+  }
+}

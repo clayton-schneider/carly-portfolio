@@ -5,7 +5,8 @@
     "skills": {},
     "header": {
       "Navigation": {}
-    }
+    },
+    "skill": {}
   },
   "slices": {
     "Portfolio": {
@@ -17,6 +18,12 @@
     "Hero": {
       "default": {
         "primary": {}
+      }
+    },
+    "Skills": {
+      "default": {
+        "primary": {},
+        "items": {}
       }
     }
   }

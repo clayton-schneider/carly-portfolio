@@ -29,6 +29,9 @@
             },
             "hero": {
               "type": "SharedSlice"
+            },
+            "skills": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -14,29 +14,7 @@ const Portfolio: FunctionComponent<SliceComponentProps> = (props) => {
 
   const VariableComponent = componentMap[props.slice.variation];
 
-  return (
-    <VariableComponent
-      {...props.slice}
-      // id={`${index}-portfolio-slice`}
-    />
-  );
+  return <VariableComponent {...props.slice} />;
 };
-
-// const Portfolio = ({ slice }) => (
-//   <section>
-//     <span className="title">
-//       {slice.primary.title ? (
-//         <RichText render={slice.primary.title} />
-//       ) : (
-//         <h2>Template slice, update me!</h2>
-//       )}
-//     </span>
-//     {slice.primary.description ? (
-//       <RichText render={slice.primary.description} />
-//     ) : (
-//       <p>start by editing this slice from inside Slice Machine!</p>
-//     )}
-//   </section>
-// );
 
 export default Portfolio;

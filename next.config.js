@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
+      "carly.cdn.prismic.io",
       "images.prismic.io",
       "prismic-io.s3.amazonaws.com",
       "images.unsplash.com",

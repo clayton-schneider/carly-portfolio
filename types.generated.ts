@@ -96,7 +96,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = PortfolioSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice = PortfolioSlice | HeroSlice | SkillsSlice;
 /**
  * Homepage document from Prismic
  *
@@ -109,6 +109,17 @@ type HomepageDocumentDataSlicesSlice = PortfolioSlice | HeroSlice;
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
 /** Content for Project documents */
 interface ProjectDocumentData {
+    /**
+     * Year field in *Project*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.year
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    year: prismicT.KeyTextField;
     /**
      * Title field in *Project*
      *
@@ -153,17 +164,6 @@ interface ProjectDocumentData {
      *
      */
     link: prismicT.LinkField;
-    /**
-     * Year field in *Project*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: project.year
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    year: prismicT.KeyTextField;
 }
 /**
  * Project document from Prismic
@@ -175,6 +175,41 @@ interface ProjectDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ProjectDocumentData>, "project", Lang>;
+/** Content for Skill documents */
+interface SkillDocumentData {
+    /**
+     * Skill Name field in *Skill*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skill.skillName
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    skillName: prismicT.KeyTextField;
+    /**
+     * Image field in *Skill*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skill.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Skill document from Prismic
+ *
+ * - **API ID**: `skill`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SkillDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SkillDocumentData>, "skill", Lang>;
 /** Content for Skills documents */
 interface SkillsDocumentData {
     /**
@@ -182,23 +217,23 @@ interface SkillsDocumentData {
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: skills.Skill
+     * - **API ID Path**: skills.skill
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    Skill: prismicT.KeyTextField;
+    skill: prismicT.KeyTextField;
     /**
      * Image field in *Skills*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: skills.Image
+     * - **API ID Path**: skills.image
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    Image: prismicT.ImageField<never>;
+    image: prismicT.ImageField<never>;
 }
 /**
  * Skills document from Prismic
@@ -210,7 +245,7 @@ interface SkillsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SkillsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SkillsDocumentData>, "skills", Lang>;
-export type AllDocumentTypes = HeaderDocument | HomepageDocument | ProjectDocument | SkillsDocument;
+export type AllDocumentTypes = HeaderDocument | HomepageDocument | ProjectDocument | SkillDocument | SkillsDocument;
 /**
  * Primary content in Hero → Primary
  *
@@ -355,6 +390,61 @@ type PortfolioSliceVariation = PortfolioSliceDefault;
  *
  */
 export type PortfolioSlice = prismicT.SharedSlice<"portfolio", PortfolioSliceVariation>;
+/**
+ * Primary content in Skills → Primary
+ *
+ */
+interface SkillsSliceDefaultPrimary {
+    /**
+     * Section Title field in *Skills → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skills.primary.sectionTitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sectionTitle: prismicT.KeyTextField;
+}
+/**
+ * Item in Skills → Items
+ *
+ */
+export interface SkillsSliceDefaultItem {
+    /**
+     * Skill field in *Skills → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: skills.items[].skill
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    skill: prismicT.RelationField<"skill">;
+}
+/**
+ * Default variation for Skills Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Skills`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SkillsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SkillsSliceDefaultPrimary>, Simplify<SkillsSliceDefaultItem>>;
+/**
+ * Slice variation for *Skills*
+ *
+ */
+type SkillsSliceVariation = SkillsSliceDefault;
+/**
+ * Skills Shared Slice
+ *
+ * - **API ID**: `skills`
+ * - **Description**: `Skills`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SkillsSlice = prismicT.SharedSlice<"skills", SkillsSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
