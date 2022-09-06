@@ -1,6 +1,6 @@
 export default {
   name: "skill",
-  title: "Skill",
+  title: "Skills",
   type: "document",
   fields: [
     {
@@ -13,17 +13,26 @@ export default {
       title: "Slug",
       type: "slug",
       options: {
-        source: "skillName",
+        source: "name",
       },
     },
     {
       name: "image",
       title: "Skill Image",
       type: "image",
+      fields: [
+        {
+          name: "altText",
+          title: "Alt Text",
+          description:
+            "Short description of what the image represents. For accessibility and SEO purposes.",
+          type: "string",
+        },
+      ],
     },
     {
       name: "body",
-      title: "Body",
+      title: "Skill Explanation",
       type: "blockContent",
     },
   ],

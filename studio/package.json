@@ -25,9 +25,12 @@
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
+    "sanity-plugin-icon-picker": "^2.0.2",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@sanity/types": "^2.31.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/clayton-schneider/carly-portfolio.git"
