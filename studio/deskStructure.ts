@@ -38,6 +38,14 @@ export default () =>
             ])
         ),
       S.divider(),
+      S.listItem()
+        .title("Homepage")
+        .child(
+          S.document()
+            .title("Homepage")
+            .schemaType("homepage")
+            .documentId("homepage")
+        ),
       ...S.documentTypeListItems().filter(
         // Filter out any of the singletons by adding to the array
         (listItem) =>
@@ -46,6 +54,7 @@ export default () =>
             "pageSEO",
             "siteNavigation",
             "contactOptions",
+            "homepage",
           ].includes(listItem.getId())
       ),
     ]);

@@ -1,5 +1,3 @@
-import { m } from "framer-motion";
-
 export default {
   title: "Project",
   name: "project",
@@ -34,20 +32,8 @@ export default {
     {
       name: "image",
       title: "Project Image",
-      type: "image",
+      type: "webImage",
       description: "The image that will be displayed for this project",
-      options: {
-        hotspot: "true",
-      },
-      fields: [
-        {
-          name: "altText",
-          title: "Alternative Text",
-          description:
-            "Short description of what the image represents. For accessibility and SEO purposes.",
-          type: "string",
-        },
-      ],
     },
     {
       name: "body",

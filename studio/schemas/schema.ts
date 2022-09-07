@@ -12,6 +12,13 @@ import project from "./project";
 import blockContent from "./blockContent";
 import navLink from "./objects/navLink";
 import contactLink from "./objects/contactLink";
+import webImage from "./objects/webImage";
+
+// import section objects
+import hero from "./sections/hero";
+
+// import pagebuilder documents
+import homepage from "./homepage";
 
 // Site Settings Imports
 import pageSEO from "./pageSEO";
@@ -32,10 +39,13 @@ export default createSchema({
     contactOptions,
     project,
     skill,
+    homepage,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
     navLink,
     contactLink,
+    webImage,
+    hero,
   ]),
 });

@@ -19,16 +19,7 @@ export default {
     {
       name: "image",
       title: "Skill Image",
-      type: "image",
-      fields: [
-        {
-          name: "altText",
-          title: "Alt Text",
-          description:
-            "Short description of what the image represents. For accessibility and SEO purposes.",
-          type: "string",
-        },
-      ],
+      type: "webImage",
     },
     {
       name: "body",
