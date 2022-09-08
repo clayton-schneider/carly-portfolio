@@ -16,6 +16,7 @@ import webImage from "./objects/webImage";
 
 // import section objects
 import hero from "./sections/hero";
+import portfolio from "./sections/portfolio";
 
 // import pagebuilder documents
 import homepage from "./homepage";
@@ -39,7 +40,10 @@ export default createSchema({
     contactOptions,
     project,
     skill,
+
+    // Add sections to Sanity
     homepage,
+    portfolio,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
