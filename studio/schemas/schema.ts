@@ -13,6 +13,7 @@ import blockContent from "./blockContent";
 import navLink from "./objects/navLink";
 import contactLink from "./objects/contactLink";
 import webImage from "./objects/webImage";
+import webIcon from "./objects/webIcon";
 
 // import section objects
 import hero from "./sections/hero";
@@ -43,6 +44,7 @@ export default createSchema({
 
     // Add sections to Sanity
     homepage,
+    hero,
     portfolio,
     skillGallery,
     contact,
@@ -52,6 +54,6 @@ export default createSchema({
     navLink,
     contactLink,
     webImage,
-    hero,
+    webIcon,
   ]),
 });

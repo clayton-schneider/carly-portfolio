@@ -17,7 +17,8 @@ import { createClient } from "../prismicio";
 import { components } from "../slices";
 
 // Sanity
-import { sanityClient, urlFor } from "../sanity";
+import { sanityClient } from "../sanity";
+import { PageBuilder } from "../components/PageBuilder";
 
 import Head from "next/head";
 
@@ -41,8 +42,7 @@ const Home = ({
       <main className="overflow-x-hidden">
         <Layout header={header}>
           <>
-            {/* <SliceZone slices={page.data.slices} components={components} /> */}
-            {/* <Contact {...contact} /> */}
+            <PageBuilder sections={page.sections} />
           </>
         </Layout>
       </main>
@@ -54,12 +54,39 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const query = `*[_type == "homepage"]{
-    _id,
-    sections
+    sections[] {
+      _type == "hero" => {
+      ...
+      },
+      _type == "portfolio" => {
+        ...,
+        pastWorks[]->{date, slug, name, summary, image}
+      },
+      _type == "skillGallery" => {
+        ...,
+        skills[]->{
+          image {
+            ...,
+            source {
+              "": asset->{
+                url,
+                "": metadata{dimensions}
+              }
+            }
+          }, 
+          name,
+          slug
+        }
+      },
+      _type == "contact" => {
+        ...,
+        contactLinks[] {icon, link, linkText}
+      }
+    }
   }`;
 
-  const page = await sanityClient.fetch(query);
-
+  let page = await sanityClient.fetch(query);
+  page = page[0];
   // Because there is linked data
   // For Reference: https://community.prismic.io/t/not-able-to-query-slice-machine-slices-with-graphquery/7030/23
   // const query = `{

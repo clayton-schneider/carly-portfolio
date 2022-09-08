@@ -21,7 +21,9 @@ export default {
       title: "Date",
       type: "date",
       description: "When the project was completed",
-      dateFormat: "MMMM YYYY",
+      options: {
+        dateFormat: "MMMM YYYY",
+      },
     },
     {
       name: "summary",

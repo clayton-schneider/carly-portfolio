@@ -16,7 +16,7 @@ export default {
     {
       title: "Icon",
       name: "icon",
-      type: "iconPicker",
+      type: "webIcon",
     },
   ],
 };

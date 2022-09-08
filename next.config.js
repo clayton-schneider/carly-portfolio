@@ -8,6 +8,7 @@ const nextConfig = {
       "images.prismic.io",
       "prismic-io.s3.amazonaws.com",
       "images.unsplash.com",
+      "cdn.sanity.io",
     ],
   },
 };
