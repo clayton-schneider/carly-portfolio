@@ -29,5 +29,10 @@ export default {
       title: "Hero Image",
       type: "webImage",
     },
+    {
+      name: "link",
+      title: "CTA Link",
+      type: "navLink",
+    },
   ],
 };

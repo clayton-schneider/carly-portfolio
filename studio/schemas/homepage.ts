@@ -8,7 +8,12 @@ export default {
       type: "array",
       title: "Page Builder Sections",
       description: "Add/rearrange sections to determine the layout of the page",
-      of: [{ type: "hero" }, { type: "portfolio" }],
+      of: [
+        { type: "hero" },
+        { type: "portfolio" },
+        { type: "skillGallery" },
+        { type: "contact" },
+      ],
     },
   ],
 };

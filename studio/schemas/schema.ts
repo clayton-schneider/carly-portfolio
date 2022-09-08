@@ -17,6 +17,8 @@ import webImage from "./objects/webImage";
 // import section objects
 import hero from "./sections/hero";
 import portfolio from "./sections/portfolio";
+import skillGallery from "./sections/skillGallery";
+import contact from "./sections/contact";
 
 // import pagebuilder documents
 import homepage from "./homepage";
@@ -24,7 +26,6 @@ import homepage from "./homepage";
 // Site Settings Imports
 import pageSEO from "./pageSEO";
 import siteNavigation from "./siteNavigation";
-import contactOptions from "./contactOptions";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,13 +38,14 @@ export default createSchema({
     // in the studio.
     pageSEO,
     siteNavigation,
-    contactOptions,
     project,
     skill,
 
     // Add sections to Sanity
     homepage,
     portfolio,
+    skillGallery,
+    contact,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

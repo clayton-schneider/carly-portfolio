@@ -27,14 +27,6 @@ export default () =>
                     .schemaType("siteNavigation")
                     .documentId("siteNavigation")
                 ),
-              S.listItem()
-                .title("Contact Options")
-                .child(
-                  S.document()
-                    .title("Contact Options")
-                    .schemaType("contactOptions")
-                    .documentId("contactOptions")
-                ),
             ])
         ),
       S.divider(),
