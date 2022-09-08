@@ -1,11 +1,10 @@
 // Import Types
 import { FunctionComponent } from "react";
-import { HeaderDocument } from "../../types.generated";
 import { NavLink } from "./NavLink";
 
 import { MobileMenu } from "./MobileMenu";
 
-export const Header: FunctionComponent<HeaderDocument> = (props) => {
+export const Header: FunctionComponent = (props) => {
   const { identity, navigation } = props.data;
   console.log;
   return (

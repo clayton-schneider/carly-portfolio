@@ -1,6 +1,5 @@
 import { FunctionComponent, useState } from "react";
 import { motion } from "framer-motion";
-import classNames from "classnames";
 
 interface IBurger {
   className?: string;

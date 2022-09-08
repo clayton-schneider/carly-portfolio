@@ -1,21 +1,7 @@
 import { Burger } from "./Burger";
 import { motion, useCycle } from "framer-motion";
-import {
-  HeaderDocumentDataNavigationItem,
-  Simplify,
-} from "../../types.generated";
 
-interface IMobileMenu {
-  className?: string;
-  navigation:
-    | []
-    | [
-        Simplify<HeaderDocumentDataNavigationItem>,
-        ...Simplify<HeaderDocumentDataNavigationItem>[]
-      ];
-}
-
-export const MobileMenu = ({ className, navigation }: IMobileMenu) => {
+export const MobileMenu = ({ className, navigation }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   const sidebar = {

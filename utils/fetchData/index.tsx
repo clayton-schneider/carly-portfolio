@@ -1,1 +1,1 @@
-export { getHeaderProps } from "./getHeaderProps";
+// export { getHeaderProps } from "./getHeaderProps";

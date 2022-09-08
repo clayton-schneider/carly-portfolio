@@ -1,20 +1,12 @@
 // Types
 import { GetStaticProps } from "next";
-import { PrismicDocument } from "@prismicio/types";
-import { ContactDocument, HeaderDocument } from "../types.generated";
 
 // Components
 import { Layout } from "../components/Layout";
-import { Contact } from "../components/Contact";
 
 // Data Fetching from Prismic
 // import { getHeaderProps } from "../utils/fetchData";
 // import { getContactProps } from "../utils/fetchData/getContactProps";
-
-// Prismic Setup
-import { SliceZone } from "@prismicio/react";
-import { createClient } from "../prismicio";
-import { components } from "../slices";
 
 // Sanity
 import { sanityClient } from "../sanity";
@@ -22,15 +14,7 @@ import { PageBuilder } from "../components/PageBuilder";
 
 import Head from "next/head";
 
-const Home = ({
-  page,
-  header,
-  contact,
-}: {
-  page: PrismicDocument;
-  header: HeaderDocument;
-  contact: ContactDocument;
-}) => {
+const Home = ({ page, header }) => {
   return (
     <div>
       <Head>
@@ -87,67 +71,13 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
 
   let page = await sanityClient.fetch(query);
   page = page[0];
-  // Because there is linked data
-  // For Reference: https://community.prismic.io/t/not-able-to-query-slice-machine-slices-with-graphquery/7030/23
-  // const query = `{
-  //   homepage{
-  //     ...homepageFields
-  //     slices{
-  //      ...on hero{
-  //        variation{
-  //          ...on default{
-  //            primary{
-  //              ...primaryFields
-  //            }
-  //            items{
-  //              ...itemsFields
-  //            }
-  //          }
-  //        }
-  //      }
-  //      ...on skills{
-  //        variation{
-  //          ...on default{
-  //            primary{
-  //              sectionTitle
-  //            }
-  //            items{
-  //              skill{
-  //                ...skillFields
-  //              }
-  //            }
-  //          }
-  //        }
-  //      }
-  //      ...on portfolio{
-  //        variation{
-  //          ...on default{
-  //            primary{
-  //              sectionTitle
-  //            }
-  //            items {
-  //              project{
-  //                ...projectFields
-  //              }
-  //            }
-  //          }
-  //        }
-  //      }
-  //    }
-  //   }
-  // }`;
 
-  // const client = createClient({ previewData });
-
-  // const page = await client.getSingle("homepage", { graphQuery: query });
   // const header = await getHeaderProps({ client });
-  // const contact = await getContactProps({ client });
 
   return {
     props: {
       page,
       // header,
-      // contact,
     },
   };
 };
