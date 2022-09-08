@@ -2,8 +2,8 @@ export default {
   name: "pageSEO",
   title: "Page SEO",
   type: "document",
-  // Don't allow users to create or delete this object
-  __experimental_actions: [/*'create'*/ "update", /*'delete'*/ "publish"],
+  // Don't allow users to delete this object
+  __experimental_actions: ["create", "update", /*'delete'*/ "publish"],
   fields: [
     {
       name: "title",

@@ -4,7 +4,7 @@ export default {
   type: "object",
   fields: [
     {
-      name: "image",
+      name: "source",
       title: "Image",
       type: "image",
       options: {
