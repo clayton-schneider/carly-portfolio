@@ -6,7 +6,7 @@ import { NavLink } from "./NavLink";
 
 import { MobileMenu } from "./MobileMenu";
 
-import Link from "Next/Link";
+import Link from "next/link";
 
 interface IHeaderProps {
   navigation: Navigation;
