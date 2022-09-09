@@ -43,6 +43,7 @@ const Skill = ({ skill, siteSEO, navigation }: ISkillProps) => {
                 objectFit="contain"
                 priority
                 src={urlFor(skill.image.source).url()}
+                alt={skill.image.altText}
               />
             </div>
             <PortableText

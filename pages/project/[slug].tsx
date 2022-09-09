@@ -44,6 +44,7 @@ const Project = ({ project, siteSEO, navigation }: IProjectProps) => {
                 objectFit="cover"
                 priority
                 src={urlFor(project.image.source).url()}
+                alt={project.image.altText}
               />
             </div>
             <PortableText
