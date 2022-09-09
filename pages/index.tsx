@@ -1,5 +1,6 @@
 // Types
 import { GetStaticProps } from "next";
+import { Navigation } from "../typings";
 
 // Components
 import { Layout } from "../components/Layout";
@@ -13,7 +14,14 @@ import { PageBuilder } from "../components/PageBuilder";
 
 import Head from "next/head";
 
-const Home = ({ page, navigation }) => {
+const Home = ({
+  page,
+  navigation,
+}: {
+  page: { sections: JSX.Element[] };
+  navigation: Navigation;
+}) => {
+  console.log(navigation);
   return (
     <div>
       <Head>

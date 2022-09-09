@@ -1,10 +1,16 @@
 // Import Types
 import { FunctionComponent } from "react";
+import { Navigation } from "../../typings";
+
 import { NavLink } from "./NavLink";
 
 import { MobileMenu } from "./MobileMenu";
 
-export const Header: FunctionComponent = ({ navigation }) => {
+interface IHeaderProps {
+  navigation: Navigation;
+}
+
+export const Header: FunctionComponent<IHeaderProps> = ({ navigation }) => {
   return (
     <header className="my-5 flex items-center justify-between">
       <h1 className="text-3xl font-bold text-dark">Carly Fisher</h1>

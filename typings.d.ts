@@ -7,3 +7,10 @@ interface webImage {
 }
 
 export interface homepage {}
+
+interface navigationLink {
+  link: string;
+  linkText: string;
+}
+
+export interface Navigation extends Array<navigationLink> {}
