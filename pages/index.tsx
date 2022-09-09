@@ -4,9 +4,8 @@ import { GetStaticProps } from "next";
 // Components
 import { Layout } from "../components/Layout";
 
-// Data Fetching from Prismic
-// import { getHeaderProps } from "../utils/fetchData";
-// import { getContactProps } from "../utils/fetchData/getContactProps";
+// Data Fetching from Sanity
+import { getSiteNavigation } from "../utils/fetchData";
 
 // Sanity
 import { sanityClient } from "../sanity";
@@ -14,7 +13,7 @@ import { PageBuilder } from "../components/PageBuilder";
 
 import Head from "next/head";
 
-const Home = ({ page, header }) => {
+const Home = ({ page, navigation }) => {
   return (
     <div>
       <Head>
@@ -24,7 +23,7 @@ const Home = ({ page, header }) => {
       </Head>
 
       <main className="overflow-x-hidden">
-        <Layout header={header}>
+        <Layout navigation={navigation}>
           <>
             <PageBuilder sections={page.sections} />
           </>
@@ -72,12 +71,12 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   let page = await sanityClient.fetch(query);
   page = page[0];
 
-  // const header = await getHeaderProps({ client });
+  const { navigation } = await getSiteNavigation();
 
   return {
     props: {
       page,
-      // header,
+      navigation,
     },
   };
 };

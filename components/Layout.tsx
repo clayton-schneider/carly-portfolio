@@ -1,18 +1,16 @@
 // Import Types
-import { HeaderDocument } from "../types.generated";
-
 import { Header } from "./Header";
 
 export const Layout = ({
-  header,
+  navigation,
   children,
 }: {
-  header: HeaderDocument;
+  navigation: any;
   children: JSX.Element;
 }) => {
   return (
     <div className="mx-auto max-w-7xl px-[5%] xl:px-0">
-      {/* <Header {...header} /> */}
+      <Header navigation={navigation} />
       {children}
     </div>
   );

@@ -1,1 +1,1 @@
-// export { getHeaderProps } from "./getHeaderProps";
+export { getSiteNavigation } from "./getSiteNavigation";
