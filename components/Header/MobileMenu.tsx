@@ -1,7 +1,13 @@
 import { Burger } from "./Burger";
 import { motion, useCycle } from "framer-motion";
+import { Navigation } from "../../typings";
 
-export const MobileMenu = ({ className, navigation }) => {
+interface IMobileMenuProps {
+  className: string;
+  navigation: Navigation;
+}
+
+export const MobileMenu = ({ className, navigation }: IMobileMenuProps) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   const sidebar = {
