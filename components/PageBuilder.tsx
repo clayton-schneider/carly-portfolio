@@ -1,10 +1,10 @@
 import React from "react";
 import { Hero } from "./sections/Hero";
 import { Portfolio } from "./sections/Portfolio";
-import { SkillGallery } from "./sections/skillGallery";
+import { SkillGallery } from "./sections/SkillGallery";
 import { Contact } from "./sections/Contact";
 
-export const PageBuilder = ({ sections }) => {
+export const PageBuilder = ({ sections }: any) => {
   const componentMap = {
     hero: Hero,
     portfolio: Portfolio,
@@ -14,7 +14,8 @@ export const PageBuilder = ({ sections }) => {
 
   return (
     <div>
-      {sections.map((section, index) => {
+      {sections.map((section: any, index: number) => {
+        // @ts-ignore
         const VariableComponent = componentMap[section._type];
         return <VariableComponent key={`section-${index}`} {...section} />;
       })}
