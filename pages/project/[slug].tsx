@@ -1,21 +1,26 @@
 // Import Types
-import { Project, SiteSEO } from "../../typings";
+import { Project, SiteSEO, Navigation } from "../../typings";
 import { GetStaticProps } from "next";
 
 // Import Sanity Functions
 import { urlFor, sanityClient } from "../../sanity";
-import { getSiteSEO } from "../../utils/fetchData";
+import { getSiteSEO, getSiteNavigation } from "../../utils/fetchData";
+
+import Serializer from "../../components/Serializer";
+import PortableText from "react-portable-text";
+import { Layout } from "../../components/Layout";
 
 // Import Next Functions
 import Head from "next/head";
-import PortableText from "react-portable-text";
+import Image from "next/image";
 
 interface IProjectProps {
   project: Project;
+  navigation: Navigation;
   siteSEO: SiteSEO;
 }
 
-const Project = ({ project, siteSEO }: IProjectProps) => {
+const Project = ({ project, siteSEO, navigation }: IProjectProps) => {
   console.log(project.name);
   return (
     <div>
@@ -30,12 +35,26 @@ const Project = ({ project, siteSEO }: IProjectProps) => {
         />
       </Head>
       <main>
-        <PortableText
-          className="prose"
-          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-          content={project.body}
-        />
+        <Layout navigation={navigation}>
+          <div className="my-20 mx-auto max-w-3xl">
+            <h1 className="text-5xl font-bold">{project.name}</h1>
+            <div className="relative my-5 h-96 w-full">
+              <Image
+                layout="fill"
+                objectFit="cover"
+                priority
+                src={urlFor(project.image.source).url()}
+              />
+            </div>
+            <PortableText
+              className="prose"
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+              content={project.body}
+              serializers={Serializer}
+            />
+          </div>
+        </Layout>
       </main>
     </div>
   );
@@ -62,8 +81,22 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // necessary to expand query to support internal linking
   const query = `*[_type== "project" && slug.current == $slug][0] {
-    ...
+    ...,
+    body[]{
+      ...,
+      markDefs[]{
+        ...,
+        _type == "internalLink" => {
+          ...,
+          "": reference->{
+            "prefix": _type, 
+            slug
+           }
+        }
+      }
+    }
   }`;
 
   const project = await sanityClient.fetch(query, {
@@ -76,11 +109,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   }
 
+  const { navigation } = await getSiteNavigation();
   const siteSEO = await getSiteSEO();
 
   return {
     props: {
       project,
+      navigation,
       siteSEO,
     },
   };

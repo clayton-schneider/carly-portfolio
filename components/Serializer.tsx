@@ -6,13 +6,6 @@ import Image from "next/future/image";
 import Link from "next/link";
 import { urlFor } from "../sanity";
 
-const getInternalLinkPrefix = (doc: any) => {
-  switch (doc.type) {
-    case "project":
-      return "project";
-  }
-};
-
 const Serializer = {
   h2: (props: any) => <h2 className="my-2 text-3xl font-bold" {...props}></h2>,
   h3: (props: any) => <h3 className="my-2 text-2xl font-bold" {...props}></h3>,
