@@ -38,7 +38,11 @@ export const Contact = (props: IContactProps) => {
               }
               alt={contactLink.icon.altText ? contactLink.icon.altText : ""}
             />
-            <a href={contactLink.link ? contactLink.link : "/404"}>
+            <a
+              href={contactLink.link ? contactLink.link : "/404"}
+              target="_blank"
+              rel="noreferrer"
+            >
               {contactLink.linkText ? contactLink.linkText : "Insert link text"}
             </a>
           </div>
