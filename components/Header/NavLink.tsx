@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const NavLink = ({
   link,
   linkText,
@@ -8,8 +10,10 @@ export const NavLink = ({
   className?: string | null;
 }) => {
   return (
-    <a className={className + " "} href={link ? link : "/404"}>
-      {linkText ? linkText : "Link Text"}
-    </a>
+    <Link href={link ? `/${link}` : "/404"}>
+      <span className={className + " cursor-pointer"}>
+        {linkText ? linkText : "Link Text"}
+      </span>
+    </Link>
   );
 };

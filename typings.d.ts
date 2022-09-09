@@ -3,7 +3,7 @@ import { Image, StringSchemaType } from "@sanity/types";
 interface webImage {
   _type: "webImage";
   altText: string;
-  source: Image;
+  source: string;
 }
 
 export interface homepage {}
