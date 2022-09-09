@@ -1,4 +1,3 @@
-// import { Client } from "@prismicio/client";
 import { sanityClient } from "../../sanity";
 
 export const getSiteNavigation = async () => {

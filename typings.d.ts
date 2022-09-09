@@ -1,4 +1,4 @@
-import { Image } from "@sanity/types";
+import { Image, StringSchemaType } from "@sanity/types";
 
 interface webImage {
   _type: "webImage";
@@ -14,3 +14,9 @@ interface navigationLink {
 }
 
 export interface Navigation extends Array<navigationLink> {}
+
+export interface SiteSEO {
+  title: string;
+  description: string;
+  favicon: string;
+}
