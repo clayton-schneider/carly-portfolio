@@ -1,5 +1,6 @@
 // Import Types
 import { Header } from "./Header";
+import Footer from "./Footer";
 import { Navigation } from "../typings";
 import { FunctionComponent } from "react";
 
@@ -16,6 +17,7 @@ export const Layout: FunctionComponent<ILayoutProps> = ({
     <div className="mx-auto max-w-7xl px-[5%] xl:px-0">
       <Header navigation={navigation} />
       {children}
+      <Footer />
     </div>
   );
 };
