@@ -29,3 +29,10 @@ export interface Project {
   summary: string;
   name: string;
 }
+
+export interface Skill {
+  image: webImage;
+  body: [object];
+  slug: Slug;
+  name: string;
+}

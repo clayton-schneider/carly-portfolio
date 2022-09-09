@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+
 // Cant use since we need dimensions of image
 // There is currently no way to use urlbuilder and get image dimensions
 // This is why in the query we specifically fetch the url and dimensions
@@ -39,24 +41,23 @@ export const SkillGallery = (props: IPortfolioProps) => {
       </h2>
       <div className="noscrollbar mt-10 flex space-x-8 overflow-x-scroll pb-2">
         {skills.map((skill, index) => (
-          <div
-            className="flex h-[150px] w-[250px] flex-none items-center justify-center rounded-3xl bg-neutral-300"
-            key={`skill-${index}`}
-          >
-            {skill.image.source && (
-              <Image
-                className="stroke-red-500"
-                width={skill.image.source.dimensions.width}
-                height={skill.image.source.dimensions.height}
-                src={skill.image.source.url}
-                alt={
-                  skill.image.altText
-                    ? skill.image.altText
-                    : "marketing research skill"
-                }
-              />
-            )}
-          </div>
+          <Link key={`skill-${index}`} href={`/skill/${skill.slug.current}`}>
+            <div className="flex h-[150px] w-[250px] flex-none cursor-pointer items-center justify-center rounded-3xl bg-neutral-300">
+              {skill.image.source && (
+                <Image
+                  className="stroke-red-500"
+                  width={skill.image.source.dimensions.width}
+                  height={skill.image.source.dimensions.height}
+                  src={skill.image.source.url}
+                  alt={
+                    skill.image.altText
+                      ? skill.image.altText
+                      : "marketing research skill"
+                  }
+                />
+              )}
+            </div>
+          </Link>
         ))}
       </div>
     </section>
