@@ -1,3 +1,5 @@
+import { CgInternal } from "react-icons/cg";
+
 /**
  * This is the schema definition for the rich text fields used for
  * for this blog studio. When you import it in schemas.js it can be
@@ -54,6 +56,20 @@ export default {
               },
             ],
           },
+          {
+            title: "Internal link",
+            name: "internalLink",
+            type: "object",
+            icon: CgInternal,
+            fields: [
+              {
+                title: "Reference",
+                name: "reference",
+                type: "reference",
+                to: [{ type: "project" }, { type: "skill" }],
+              },
+            ],
+          },
         ],
       },
     },
@@ -61,7 +77,7 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      type: "image",
+      type: "blockImage",
       options: { hotspot: true },
     },
   ],

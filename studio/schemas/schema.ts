@@ -14,6 +14,7 @@ import navLink from "./objects/navLink";
 import contactLink from "./objects/contactLink";
 import webImage from "./objects/webImage";
 import webIcon from "./objects/webIcon";
+import blockImage from "./objects/blockImage";
 
 // import section objects
 import hero from "./sections/hero";
@@ -55,5 +56,6 @@ export default createSchema({
     contactLink,
     webImage,
     webIcon,
+    blockImage,
   ]),
 });
