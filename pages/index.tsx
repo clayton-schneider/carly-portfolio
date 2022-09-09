@@ -23,7 +23,6 @@ const Home = ({
   navigation: Navigation;
   siteSEO: SiteSEO;
 }) => {
-  console.log(siteSEO);
   return (
     <div>
       <Head>

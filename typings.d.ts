@@ -20,3 +20,12 @@ export interface SiteSEO {
   description: string;
   favicon: string;
 }
+
+export interface Project {
+  date: string;
+  image: webImage;
+  body: [object];
+  slug: Slug;
+  summary: string;
+  name: string;
+}
