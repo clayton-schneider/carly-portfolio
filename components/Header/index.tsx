@@ -16,7 +16,9 @@ export const Header: FunctionComponent<IHeaderProps> = ({ navigation }) => {
   return (
     <header className="my-5 flex items-center justify-between">
       <Link href="/">
-        <h1 className="text-3xl font-bold text-dark">Carly Fisher</h1>
+        <h1 className="cursor-pointer text-3xl font-bold text-dark">
+          Carly Fisher
+        </h1>
       </Link>
 
       {/* Navigation Links */}
