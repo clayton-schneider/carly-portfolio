@@ -6,6 +6,8 @@ import { NavLink } from "./NavLink";
 
 import { MobileMenu } from "./MobileMenu";
 
+import Link from "Next/Link";
+
 interface IHeaderProps {
   navigation: Navigation;
 }
@@ -13,7 +15,9 @@ interface IHeaderProps {
 export const Header: FunctionComponent<IHeaderProps> = ({ navigation }) => {
   return (
     <header className="my-5 flex items-center justify-between">
-      <h1 className="text-3xl font-bold text-dark">Carly Fisher</h1>
+      <Link href="/">
+        <h1 className="text-3xl font-bold text-dark">Carly Fisher</h1>
+      </Link>
 
       {/* Navigation Links */}
       <div className="relative z-30 hidden space-x-4 md:block">
