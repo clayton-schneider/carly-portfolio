@@ -1,4 +1,6 @@
 import { urlFor } from "../../sanity";
+import Serializer from "../../components/Serializer";
+import PortableText from "react-portable-text";
 
 import Image from "next/image";
 
@@ -7,7 +9,7 @@ interface IHeroProps {
   _key: string;
   sectionTitle: string;
   headline: string;
-  body: string;
+  body: object[];
   id: string;
   link: {
     _type: string;
@@ -35,9 +37,13 @@ export const Hero = (props: IHeroProps) => {
         <h2 className="mt-2 text-3xl">
           {headline ? headline : "Make sure to add a headline"}
         </h2>
-        <p className="mt-2 text-lg">
-          {body ? body : "Make sure to add body text!"}
-        </p>
+        <PortableText
+          className="prose"
+          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+          content={body}
+          serializers={Serializer}
+        />
         {link && (
           <a
             className="mt-2 inline-block rounded-3xl border border-primary py-1 px-8 font-bold text-primary"
