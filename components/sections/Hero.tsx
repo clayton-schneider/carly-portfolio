@@ -28,9 +28,9 @@ export const Hero = (props: IHeroProps) => {
   return (
     <section
       id={id}
-      className="my-20 flex flex-col justify-between md:flex-row md:space-x-5"
+      className="my-20 flex flex-col justify-between lg:flex-row lg:space-x-5"
     >
-      <div className="relative z-10 mx-auto max-w-lg text-center md:mx-0 md:mt-10 md:max-w-sm md:text-left lg:max-w-lg">
+      <div className="relative z-10 mx-auto max-w-2xl text-center md:mt-10 lg:mx-0 lg:text-left">
         <h6 className="text-5xl font-bold uppercase text-primary">
           {sectionTitle}
         </h6>
@@ -54,7 +54,7 @@ export const Hero = (props: IHeroProps) => {
         )}
       </div>
 
-      <div className="relative mx-auto mt-10 md:mx-0 md:mt-0">
+      <div className="relative mx-auto mt-10 lg:mx-0 lg:mt-0">
         <span className="absolute -bottom-4 -left-10 z-10 block h-20 w-20 rounded-full bg-dark"></span>
         <span className="absolute -right-72 -bottom-10 z-0 block h-[500px] w-[500px] rounded-full bg-primary"></span>
         {image && (
