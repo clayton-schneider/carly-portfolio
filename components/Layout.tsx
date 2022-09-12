@@ -14,7 +14,7 @@ export const Layout: FunctionComponent<ILayoutProps> = ({
   children,
 }: ILayoutProps) => {
   return (
-    <div className="mx-auto max-w-7xl px-[5%] xl:px-0">
+    <div className="mx-auto max-w-7xl px-[5%] xl:px-[2.5%] 2xl:px-0">
       <Header navigation={navigation} />
       {children}
       <Footer />
